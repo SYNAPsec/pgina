@@ -62,7 +62,7 @@ namespace pGina.Configuration
             }
         }
 
-        private static readonly string PGINA_SERVICE_NAME = "pGina";
+        private static readonly string PGINA_SERVICE_NAME = "EntryWCCP";
 
         // Plugin information keyed by Guid
         private Dictionary<string, IPluginBase> m_plugins = new Dictionary<string, IPluginBase>();
@@ -253,7 +253,7 @@ namespace pGina.Configuration
 
         private void LoadGeneralSettings()
         {
-            m_pginaVersionLbl.Text = "pGina " +
+            m_pginaVersionLbl.Text = "Entry WCCP " +
                 System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
             m_tileImageTxt.Text = Settings.Get.GetSetting("TileImage", null);
@@ -1208,7 +1208,7 @@ namespace pGina.Configuration
             {
                 this.logWindow.LogTextBox.AppendText("****" + Environment.NewLine);
                 this.logWindow.LogTextBox.AppendText("**** Simulated login starting: " + DateTime.Now.ToString("F") + Environment.NewLine);
-                this.logWindow.LogTextBox.AppendText("**** pGina Version:  " +
+                this.logWindow.LogTextBox.AppendText("**** Entry WCCP Version:  " +
                     System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() + Environment.NewLine);
                 this.logWindow.LogTextBox.AppendText("**** Enabled plugins: " + Environment.NewLine);
                 foreach (string s in GetPluginList())
@@ -1430,7 +1430,7 @@ namespace pGina.Configuration
                 {
                     if (String.IsNullOrEmpty(m_tileImageTxt.Text.Trim()))
                     {
-                        m_tileImage.Image = pGina.Configuration.Properties.Resources.pginalogo;
+                        m_tileImage.Image = pGina.Configuration.Properties.Resources.EntryWCCPLogoAlpha;
                     }
                     else
                     {
@@ -1439,7 +1439,7 @@ namespace pGina.Configuration
                 }
                 catch (Exception)
                 {
-                    m_tileImage.Image = pGina.Configuration.Properties.Resources.pginalogo;
+                    m_tileImage.Image = pGina.Configuration.Properties.Resources.EntryWCCPLogoAlpha;
                 }
 
                 ResetStageStatus();

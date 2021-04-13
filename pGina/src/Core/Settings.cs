@@ -52,7 +52,7 @@ namespace pGina.Core
             s_settings.SetDefault("TraceMsgTraffic", false);
             s_settings.SetDefault("SessionHelperExe", "pGina.Service.SessionHelper.exe");
             s_settings.SetDefault("EnableMotd", true);
-            s_settings.SetDefault("Motd", "pGina Version: %v");
+            s_settings.SetDefault("Motd", "Entry WCCP Version: %v");
             s_settings.SetDefault("GinaPassthru", false);
             s_settings.SetDefault("ChainedGinaPath", "MSGINA.DLL");
             s_settings.SetDefault("EnableSpecialActionButton", false);
@@ -72,10 +72,10 @@ namespace pGina.Core
             s_settings.SetDefault("CredentialProviderFilters", new string[] { });
 
             // Default setup is local machine plugin as enabled for auth and gateway
-            s_settings.SetDefault("IPluginAuthentication_Order", new string[] { "12FA152D-A2E3-4C8D-9535-5DCD49DFCB6D" });
-            s_settings.SetDefault("IPluginAuthenticationGateway_Order", new string[] { "12FA152D-A2E3-4C8D-9535-5DCD49DFCB6D" });
-            s_settings.SetDefault("12FA152D-A2E3-4C8D-9535-5DCD49DFCB6D",
-                (int) (Core.PluginLoader.State.AuthenticateEnabled | Core.PluginLoader.State.GatewayEnabled));
+            s_settings.SetDefault("IPluginAuthentication_Order", new string[] { "" });
+            s_settings.SetDefault("IPluginAuthenticationGateway_Order", new string[] { "" });
+            //s_settings.SetDefault("12FA152D-A2E3-4C8D-9535-5DCD49DFCB6D",
+            //    (int) (Core.PluginLoader.State.AuthenticateEnabled | Core.PluginLoader.State.GatewayEnabled));
 
             s_settings.SetDefault("UseOriginalUsernameInUnlockScenario", false);
         }

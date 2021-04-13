@@ -17,6 +17,7 @@
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -43,13 +44,6 @@ END
 
 #endif    // APSTUDIO_INVOKED
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Bitmap
-//
-
-IDB_PGINA_LOGO          BITMAP                  "pginalogo.bmp"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -102,7 +96,7 @@ BEGIN
     EDITTEXT        IDC_PASSWORD_TXT,146,72,183,12,ES_PASSWORD | ES_AUTOHSCROLL
     DEFPUSHBUTTON   "&Login",IDC_LOGIN_BUTTON,173,99,50,14
     PUSHBUTTON      "&Cancel",IDCANCEL,226,99,50,14
-    CONTROL         101,IDC_LOGO,"Static",SS_BITMAP | SS_CENTERIMAGE | SS_REALSIZEIMAGE,7,7,90,90
+    CONTROL         IDB_BITMAP1,IDC_LOGO,"Static",SS_BITMAP | SS_CENTERIMAGE | SS_REALSIZEIMAGE,7,7,90,90
     CTEXT           "",IDC_MOTD,108,14,225,31
     LTEXT           "Username:",IDC_USERNAME_LBL,107,57,36,8
     LTEXT           "Password:",IDC_PASSWORD_LBL,107,74,34,8
@@ -130,6 +124,24 @@ END
 #endif    // APSTUDIO_INVOKED
 
 #endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United Kingdom) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PGINA_LOGO             BITMAP                  "entrywccplogo.bmp"
+
+#endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

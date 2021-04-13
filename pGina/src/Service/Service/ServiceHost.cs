@@ -46,7 +46,7 @@ namespace Service
     {
         private Thread m_serviceThread = null;
         private pGina.Service.Impl.ServiceThread m_serviceThreadObj = null;
-        private ILog m_logger = LogManager.GetLogger("Pgina Service");
+        private ILog m_logger = LogManager.GetLogger("EntryWCCP Service");
         private Abstractions.WindowsApi.pInvokes.structenums.SERVICE_STATUS myServiceStatus;
 
         public pGinaServiceHost()

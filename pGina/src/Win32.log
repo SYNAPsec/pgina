@@ -20,12 +20,12 @@
 2>  Finished generating code
 2>  NativeLibTest.vcxproj -> D:\ss\pgina\pGina\src\\bin\Win32\NativeLibTest.exe
 3>  Dll.cpp
-4>------ Rebuild All started: Project: Gina (Gina\Gina), Configuration: Release Win32 ------
 3>  Provider.cpp
+4>------ Rebuild All started: Project: Gina (Gina\Gina), Configuration: Release Win32 ------
 4>  DialogBase.cpp
-4>  DialogLoggedOutSAS.cpp
 3>  ProviderGuid.cpp
 3>  SerializationHelpers.cpp
+4>  DialogLoggedOutSAS.cpp
 3>  ServiceStateHelper.cpp
 4>  Dll.cpp
 4>  Gina.cpp

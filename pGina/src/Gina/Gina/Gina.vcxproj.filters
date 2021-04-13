@@ -21,6 +21,9 @@
     <None Include="pginalogo.bmp">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="entrywccplogo.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dll.cpp">

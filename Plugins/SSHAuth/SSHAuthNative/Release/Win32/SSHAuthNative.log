@@ -1,4 +1,4 @@
-﻿Build started 22 Feb 2021 14:55:31.
+﻿Build started 08 Mar 2021 11:25:59.
      1>Project "D:\ss\pgina\Plugins\SSHAuth\SSHAuthNative\SSHAuthNative.vcxproj" on node 2 (rebuild target(s)).
      1>InitializeBuildStatus:
          Creating "D:\ss\pgina\Plugins\SSHAuth\SSHAuthNative\Release\Win32\SSHAuthNative.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -21,7 +21,7 @@
          Microsoft (R) Visual Studio Version 10.0.40219.1.
          Copyright (C) Microsoft Corp. All rights reserved.
          
-         The evaluation period for Visual Studio Trial ends in 29 days.
+         The evaluation period for Visual Studio Trial ends in 15 days.
          1>------ Build started: Project: SSHAuthNative, Configuration: Release x64 ------
          1>  SSHAuthNative.cpp
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(D:\ss\pgina\Plugins\SSHAuth\SSHAuthNative\Release\x64\SSHAuthNativex64.dll) does not match the Linker's OutputFile property value (D:\ss\pgina\Plugins\bin\SSHAuthNativex64.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
@@ -37,4 +37,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.93
+Time Elapsed 00:00:02.87

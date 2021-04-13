@@ -374,7 +374,8 @@ namespace pGina.Plugin.Ldap
         public void BindForSearch()
         {
             string searchDn = Settings.Store.SearchDN;
-            string searchPw = Settings.Store.GetEncryptedSetting("SearchPW");
+            //string searchPw = Settings.Store.GetEncryptedSetting("SearchPW");
+            string searchPw = Settings.Store.SearchPW;
 
             if (string.IsNullOrEmpty(searchDn))
                 // Bind anonymously

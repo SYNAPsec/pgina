@@ -14,19 +14,19 @@
 2>  NativeLibTest.cpp
 3>  ClassFactory.cpp
 2>  stdafx.cpp
-2>  Generating code
 3>  Credential.cpp
+2>  Generating code
 3>  CredentialProviderFilter.cpp
 2>  Finished generating code
-2>  NativeLibTest.vcxproj -> D:\ss\pgina\pGina\src\\bin\x64\NativeLibTest.exe
 3>  Dll.cpp
+2>  NativeLibTest.vcxproj -> D:\ss\pgina\pGina\src\\bin\x64\NativeLibTest.exe
 3>  Provider.cpp
 4>------ Rebuild All started: Project: Gina (Gina\Gina), Configuration: Release x64 ------
 4>  DialogBase.cpp
 3>  ProviderGuid.cpp
 3>  SerializationHelpers.cpp
-3>  ServiceStateHelper.cpp
 4>  DialogLoggedOutSAS.cpp
+3>  ServiceStateHelper.cpp
 4>  Dll.cpp
 4>  Gina.cpp
 4>  GinaChain.cpp

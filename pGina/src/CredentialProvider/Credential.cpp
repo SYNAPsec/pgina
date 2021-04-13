@@ -314,7 +314,7 @@ namespace pGina
 				if ( !pGina::Service::StateHelper::GetState() )
 				{
 					pDEBUG(L"Credential::Connect: pGina service is unavailable");
-					m_loginResult.Message(L"Your password change request failed, because the pGina service is not running!\n\nPlease contact your system administrator.\nReboot the machine to fix this issue.");
+					m_loginResult.Message(L"Your password change request failed, because the EntryWCCP service is not running!\n\nPlease contact your system administrator.\nReboot the machine to fix this issue.");
 
 					return S_OK;
 				}
@@ -467,7 +467,7 @@ namespace pGina
 				if(loginResult.Message().length() > 0)
 					m_loginResult.Message(loginResult.Message());
 				else
-					m_loginResult.Message(L"pGina: Your password was successfully changed");
+					m_loginResult.Message(L"EntryWCCP: Your password was successfully changed");
 
 				pDEBUG(L"change password success");
 
@@ -555,7 +555,7 @@ namespace pGina
 				if(m_loginResult.Message().length() > 0)
 					SHStrDupW(m_loginResult.Message().c_str(), ppwszOptionalStatusText);
 				else
-					SHStrDupW(L"pGina: Your password was successfully changed", ppwszOptionalStatusText);
+					SHStrDupW(L"EntryWCCP: Your password was successfully changed", ppwszOptionalStatusText);
 
 				*pcpgsr = CPGSR_NO_CREDENTIAL_FINISHED;
 				*pcpsiOptionalStatusIcon = CPSI_SUCCESS;
@@ -846,7 +846,7 @@ namespace pGina
 
 			if (m_usageScenario == CPUS_LOGON && !pGina::Service::StateHelper::GetState())
 			{
-				HANDLE hThread_dialog = CreateThread(NULL, 0, Credential::Thread_dialog, (LPVOID) L"waiting for the pGina service ...", 0, NULL);
+				HANDLE hThread_dialog = CreateThread(NULL, 0, Credential::Thread_dialog, (LPVOID) L"waiting for the Entry WCCP service ...", 0, NULL);
 				for (int x = 0; x < 60; x++)
 				{
 					if (pGina::Service::StateHelper::GetState()) break;

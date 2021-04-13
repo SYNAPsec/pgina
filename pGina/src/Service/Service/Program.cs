@@ -94,7 +94,7 @@ namespace Service
         {
             foreach (ServiceController ctrl in ServiceController.GetServices())
             {
-                if (ctrl.ServiceName == "pGina")
+                if (ctrl.ServiceName == "EntryWCCP")
                 {
                     ctrl.Start(args);
                     break;
@@ -106,7 +106,7 @@ namespace Service
         {
             foreach (ServiceController ctrl in ServiceController.GetServices())
             {
-                if (ctrl.ServiceName == "pGina")
+                if (ctrl.ServiceName == "EntryWCCP")
                 {
                     ctrl.Stop();
                     break;

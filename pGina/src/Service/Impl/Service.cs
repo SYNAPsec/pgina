@@ -118,7 +118,7 @@ namespace pGina.Service.Impl
             {
                 string pipeName = Core.Settings.Get.ServicePipeName;
                 int maxClients = Core.Settings.Get.MaxClients;
-                m_logger.InfoFormat("pGina version: {0}", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
+                m_logger.InfoFormat("Entry WCCP version: {0}", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
                 m_logger.DebugFormat("Service created - PipeName: {0} MaxClients: {1}", pipeName, maxClients);
                 m_logger.DebugFormat("System Info: {0}", Abstractions.Windows.OsInfo.OsDescription());
                 m_server = new PipeServer(pipeName, maxClients, (Func<IDictionary<string, object>, IDictionary<string, object>>)HandleMessage);
@@ -339,14 +339,15 @@ namespace pGina.Service.Impl
                                 Settings.s_settings.SetSetting("LastUsername", String.Format("{0}\\{1}", sessionDriver.UserInformation.Domain, sessionDriver.UserInformation.Username));
                             }
                             m_logger.InfoFormat("Sucess");
-                            return new LoginResponseMessage()
-                            {
-                                Result = true,
-                                Message = "",
-                                Username = sessionDriver.UserInformation.Username,
-                                Domain = sessionDriver.UserInformation.Domain,
-                                Password = sessionDriver.UserInformation.Password
-                            };
+              //TODO : Move code to end of process
+                            //return new LoginResponseMessage()
+                            //{
+                            //    Result = true,
+                            //    Message = "",
+                            //    Username = sessionDriver.UserInformation.Username,
+                            //    Domain = sessionDriver.UserInformation.Domain,
+                            //    Password = sessionDriver.UserInformation.Password
+                            //};
                         }
                         else
                         {
@@ -374,14 +375,15 @@ namespace pGina.Service.Impl
                                 Settings.s_settings.SetSetting("LastUsername", String.Format("{0}\\{1}", sessionDriver.UserInformation.Domain, sessionDriver.UserInformation.Username));
                             }
                             m_logger.InfoFormat("Sucess");
-                            return new LoginResponseMessage()
-                            {
-                                Result = true,
-                                Message = "",
-                                Username = sessionDriver.UserInformation.Username,
-                                Domain = sessionDriver.UserInformation.Domain,
-                                Password = sessionDriver.UserInformation.Password
-                            };
+              //TODO : Move code to end of process
+                            //return new LoginResponseMessage()
+                            //{
+                            //    Result = true,
+                            //    Message = "",
+                            //    Username = sessionDriver.UserInformation.Username,
+                            //    Domain = sessionDriver.UserInformation.Domain,
+                            //    Password = sessionDriver.UserInformation.Password
+                            //};
                         }
                         else
                         {
@@ -423,14 +425,14 @@ namespace pGina.Service.Impl
                                     Settings.s_settings.SetSetting("LastUsername", String.Format("{0}", sessionDriver.UserInformation.Username));
                                 }
                             }
-                            return new LoginResponseMessage()
-                            {
-                                Result = result.Success,
-                                Message = (result.Success) ? "Local non pGina user" : "Unknown username or bad password",
-                                Username = sessionDriver.UserInformation.Username,
-                                Domain = sessionDriver.UserInformation.Domain,
-                                Password = sessionDriver.UserInformation.Password
-                            };
+                            // return new LoginResponseMessage()
+                            // {
+                            //     Result = result.Success,
+                            //     Message = (result.Success) ? "Local non pGina user" : "Unknown username or bad password",
+                            //     Username = sessionDriver.UserInformation.Username,
+                            //     Domain = sessionDriver.UserInformation.Domain,
+                            //     Password = sessionDriver.UserInformation.Password
+                            // };
                         }
                     }
 
@@ -456,14 +458,14 @@ namespace pGina.Service.Impl
                                     if (!uInfo.Username.Equals(sessionDriver.UserInformation.Username, StringComparison.CurrentCultureIgnoreCase))
                                     {
                                         // that should never ever happen
-                                        m_logger.ErrorFormat("User {0} is Locked in Session {1} but the username doesn't match the session information pGina contains. '{0}' vs. '{2}'", sessionDriver.UserInformation.Username, Locked_sessionID, uInfo.Username);
-                                        return new LoginResponseMessage() { Result = false, Message = String.Format("User {0} is Locked in Session {1} but the username doesn't match the session information pGina contains\n\n'{0}' vs '{2}'", sessionDriver.UserInformation.Username, Locked_sessionID, uInfo.Username) };
+                                        m_logger.ErrorFormat("User {0} is Locked in Session {1} but the username doesn't match the session information Entry WCCP contains. '{0}' vs. '{2}'", sessionDriver.UserInformation.Username, Locked_sessionID, uInfo.Username);
+                                        return new LoginResponseMessage() { Result = false, Message = String.Format("User {0} is Locked in Session {1} but the username doesn't match the session information Entry WCCP contains\n\n'{0}' vs '{2}'", sessionDriver.UserInformation.Username, Locked_sessionID, uInfo.Username) };
                                     }
                                 }
                                 else
                                 {
-                                    m_logger.ErrorFormat("User {0} is Locked in Session {1} but was not authenticated by pGina. Unable to find SessionProperty in m_sessionPropertyCache.Get({1})", sessionDriver.UserInformation.Username, Locked_sessionID);
-                                    return new LoginResponseMessage() { Result = false, Message = String.Format("User {0} is Locked in Session {1} but was not authenticated by pGina\n\nIt is possible that another Credential Provider was used\nor the pGina service has crashed.\n", sessionDriver.UserInformation.Username, Locked_sessionID) };
+                                    m_logger.ErrorFormat("User {0} is Locked in Session {1} but was not authenticated by Entry WCCP. Unable to find SessionProperty in m_sessionPropertyCache.Get({1})", sessionDriver.UserInformation.Username, Locked_sessionID);
+                                    return new LoginResponseMessage() { Result = false, Message = String.Format("User {0} is Locked in Session {1} but was not authenticated by Entry WCCP\n\nIt is possible that another Credential Provider was used\nor the Entry WCCP service has crashed.\n", sessionDriver.UserInformation.Username, Locked_sessionID) };
                                 }
                             }
                             else
@@ -500,8 +502,8 @@ namespace pGina.Service.Impl
                                             runas_in_session.Add(iUsers.DefaultIfEmpty("").FirstOrDefault(s => s.StartsWith(pair.Key.ToString())));
                                         }
                                     }
-                                    m_logger.DebugFormat("There is a program running as {0} but it was'nt started with pGina. I can't log you in because this would conflict with the current running process. Session in which a process is running:{1}", sessionDriver.UserInformation.Username, String.Join(",", runas_in_session));
-                                    return new LoginResponseMessage() { Result = false, Message = String.Format("There is a program running as {0} but it was'nt started with pGina.\nI can't log you in because this would conflict with the current running process.\n\nSession in which a process is running:\n{1}", sessionDriver.UserInformation.Username, String.Join("\n", runas_in_session)) };
+                                    m_logger.DebugFormat("There is a program running as {0} but it was'nt started with Entry WCCP. I can't log you in because this would conflict with the current running process. Session in which a process is running:{1}", sessionDriver.UserInformation.Username, String.Join(",", runas_in_session));
+                                    return new LoginResponseMessage() { Result = false, Message = String.Format("There is a program running as {0} but it was'nt started with Entry WCCP.\nI can't log you in because this would conflict with the current running process.\n\nSession in which a process is running:\n{1}", sessionDriver.UserInformation.Username, String.Join("\n", runas_in_session)) };
                                 }
                             }
                         }
@@ -896,7 +898,7 @@ namespace pGina.Service.Impl
             List<SessionProperties> mysessionList = m_sessionPropertyCache.Get(session); //list of all users in my session
             if (mysessionList.Count == 0)
             {
-                m_logger.InfoFormat("User:? in session:{0} is unknown to pGina", session);
+                m_logger.InfoFormat("User:? in session:{0} is unknown to Entry WCCP", session);
                 return;
             }
             UserInformation userInfo = m_sessionPropertyCache.Get(session).First().GetTrackedSingle<UserInformation>(); //this user is logging of right now (my user)

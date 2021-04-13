@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>pGina.Configuration</RootNamespace>
-    <AssemblyName>pGina.Configuration</AssemblyName>
+    <AssemblyName>EntryWCCP.Configuration</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,7 +44,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\pgina_icons.ico</ApplicationIcon>
+    <ApplicationIcon>EntryWCCPIconAlpha.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
@@ -131,10 +131,14 @@
     <None Include="Resources\DownArrowSolid.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EntryWCCPIconAlpha.ico" />
     <Content Include="Resources\arrow-right-3.png" />
     <None Include="Resources\redx.png" />
     <None Include="Resources\grayBar.png" />
     <None Include="Resources\greenCheckMark.png" />
+    <None Include="Resources\EntryWCCPLogoAlpha.png" />
+    <None Include="Resources\EntryWCCPIconAlpha.ico" />
+    <None Include="Resources\entrywccplogobitmap.bmp" />
     <Content Include="Resources\pgina_icons.ico" />
     <None Include="Resources\pginalogo.bmp" />
   </ItemGroup>

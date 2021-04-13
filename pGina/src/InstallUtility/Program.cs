@@ -43,9 +43,9 @@ namespace pGina.InstallUtil
 {
     class Program
     {
-        static readonly string PGINA_SERVICE_NAME = "pGina";
+        static readonly string PGINA_SERVICE_NAME = "EntryWCCP";
         static readonly string PGINA_SERVICE_EXE = "pGina.Service.ServiceHost.exe";
-        static readonly string PGINA_CONFIG_EXE = "pGina.Configuration.exe";
+        static readonly string PGINA_CONFIG_EXE = "EntryWCCP.Configuration.exe";
 
         // Initalized in the static constructor
         static readonly SecurityIdentifier ADMIN_GROUP;
